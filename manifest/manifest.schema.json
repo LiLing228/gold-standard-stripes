@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gold-standard Hi-C Stripe Manifest Schema",
+  "description": "Schema definition for stripes.manifest.tsv",
+  "type": "object",
+  "required": [
+    "Stripe Id",
+    "Reference",
+    "Species",
+    "Genome Build",
+    "Biosample",
+    "Assay",
+    "Accession",
+    "Resolution Bp",
+    "Normalization",
+    "Chrom",
+    "Stripe Region",
+    "Orientation",
+    "Patch Matrix Size",
+    "Patch Genomic Span",
+    "Patch Region",
+    "Patch Path"
+  ],
+  "properties": {
+    "Stripe Id": {
+      "type": "string",
+      "pattern": "^stripe_[0-9]{4,}$",
+      "description": "Unique identifier for each stripe, such as stripe_0001."
+    },
+    "Reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Literature or author from which the data originate, such as Vian et al."
+    },
+    "Species": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Species to which the sample belongs, usually human or mouse."
+    },
+    "Genome Build": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Genome build version used for genomic coordinates, such as hg38, hg19, or mm10."
+    },
+    "Biosample": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Biological sample type used in the experiment, such as a cell line or tissue type (e.g. GM12878, a human B lymphocyte cell line)."
+    },
+    "Assay": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Experimental assay type, usually Hi-C or Micro-C, which are techniques used to study chromosome conformation."
+    },
+    "Accession": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Accession number of the dataset in a public database (such as GEO or 4DN), for example GSE63525."
+    },
+    "Resolution Bp": {
+      "type": "integer",
+      "description": "Resolution used for data extraction, in base pairs; for example, 10000 means each bin is 10 kb."
+    },
+    "Normalization": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Normalization method applied to the data, such as ICE, KR, OE, or raw (not normalized)."
+    },
+    "Chrom": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Chromosome on which the stripe data are located (e.g. chr15)."
+    },
+    "Stripe Region": {
+      "type": "string",
+      "pattern": "^Chr[0-9XY]+:[0-9]+-[0-9]+\\s+Chr[0-9XY]+:[0-9]+-[0-9]+$",
+      "description": "Genomic coordinate region covered by the stripe. It consists of two parts: the first region represents the width of the stripe, and the second region represents the length of the stripe, for example Chr15:25310001-25370000 Chr15:24490001-25370000."
+    },
+    "Orientation": {
+      "type": "string",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "description": "Orientation of the stripe."
+    },
+    "Patch Matrix Size": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Dimension of the patch interaction matrix associated with the stripe (e.g. 215 × 215)."
+    },
+    "Patch Genomic Span": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)?MB$",
+      "description": "Total genomic length covered by the patch matrix (e.g. 2.14MB), representing the length of the Patch Region."
+    },
+    "Patch Region": {
+      "type": "string",
+      "pattern": "^Chr[0-9XY]+:[0-9]+-[0-9]+$",
+      "description": "Specific genomic coordinate range corresponding to the patch matrix (e.g. Chr15:23790000-25930000)."
+    },
+    "Patch Path": {
+      "type": "string",
+      "pattern": ".+",
+      "description": "File path where the patch interaction matrix data are stored."
+    }
+  },
+  "additionalProperties": false
+}

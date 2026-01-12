@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Gold-standard Hi-C Stripes Dataset"
+authors:
+  - family-names: "Li"
+    given-names: "ling"
+  - family-names: "Liu"
+    given-names: "Yuchen"
+version: "1.0"
+date-released: 2026-01-12
+url: "https://github.com/liuyc/gold-standard-stripes" #替换为实际路径
+license: "https://creativecommons.org/licenses/by/4.0/"
+doi: "10.1234/gold-standard-stripes.2026"  # 如果你将来有 DOI，可以替换这里
