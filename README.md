@@ -90,7 +90,7 @@ python scripts/validate_manifest.py manifest/stripes.manifest.tsv --schema manif
 
 For questions or issues regarding this dataset, please contact:  
 
-**Name:** Liling  
-**Email:** Liling@example.com  
+**Name:** Ling Li  
+**Email:** dophrli228@gmail.com  
 **Affiliation:**  Sun Yat-sen University
 
