@@ -8,6 +8,6 @@ authors:
     given-names: "Yuchen"
 version: "1.0"
 date-released: 2026-01-12
-url: "https://github.com/liuyc/gold-standard-stripes" #替换为实际路径
+url: "https://github.com/LiLing228/gold-standard-stripes"
 license: "https://creativecommons.org/licenses/by/4.0/"
-doi: "10.1234/gold-standard-stripes.2026"  # 如果你将来有 DOI，可以替换这里
+doi: "10.1234/gold-standard-stripes.2026" 
